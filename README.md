@@ -5,3 +5,5 @@ Aldo Hartanto / 535220135
 Given Putra / 535220143
 
 Full Stack Web Film dengan Scrum
+
+Cara menggunakan code
