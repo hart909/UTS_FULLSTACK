@@ -13,3 +13,4 @@ yarn add axios cookie-parser cors dotenv express express-validator jsonwebtoken 
 
 Client: 
 Pastikan direktori benar benar kedalam /client
+yarn add @mui/material @emotion/react @emotion/styled @fontsource/roboto @mui/icons-material @mui/lab @reduxjs/toolkit react-redux react-router-dom axios dayjs formik yup swiper react-toastify query-string
