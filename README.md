@@ -9,3 +9,4 @@ Full Stack Web Film dengan Scrum
 Cara menggunakan code
 Server:
 Pastikan direktori benar benar kedalam server
+yarn add axios cookie-parser cors dotenv express express-validator jsonwebtoken mongoose nodemon
