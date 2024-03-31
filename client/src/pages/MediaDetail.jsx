@@ -2,9 +2,7 @@ import React from 'react'
 
 const MediaDetail = () => {
   return (
-    <div>
-      MediaDetail
-    </div>
+    <div>MediaDetail</div>
   )
 }
 
