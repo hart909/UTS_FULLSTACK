@@ -2,9 +2,7 @@ import React from 'react'
 
 const PasswordUpdate = () => {
   return (
-    <div>
-      PasswordUpdate
-    </div>
+    <div>PasswordUpdate</div>
   )
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "UTS-Backend",
+  "name": "UTS_Backend",
   "type": "module",
   "version": "0.0.1",
   "main": "index.js",
