@@ -128,7 +128,7 @@ const Topbar = () => {
                   }}
                   onClick={() => dispatch(setAuthModalOpen(true))}
                 >
-                  Sign In
+                  Sign In or Sign Up
                 </Button>
               )}
             </Stack>
