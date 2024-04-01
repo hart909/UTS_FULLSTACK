@@ -52,9 +52,9 @@ const SigninForm = ({ switchAuthState }) => {
   
     return (
       <Box component="form" onSubmit={signinForm.handleSubmit}>
-        <Stack spacing={3}>
+    <Stack spacing={3}>
   <TextField
-    type={showPassword ? "text" : "password"}
+    type="text"
     placeholder="Your username"
     name="username"
     fullWidth
@@ -78,7 +78,7 @@ const SigninForm = ({ switchAuthState }) => {
       endAdornment: (
         <InputAdornment position="end">
           <IconButton onClick={handleTogglePassword} edge="end">
-            {showPassword ? <VisibilityOff /> : <Visibility />}
+            {showPassword ? <Visibility /> : <VisibilityOff />}
           </IconButton>
         </InputAdornment>
       ),
@@ -89,17 +89,18 @@ const SigninForm = ({ switchAuthState }) => {
         <LoadingButton
           type="submit"
           fullWidth
-          size="large"
+          
           variant="contained"
-          sx={{ marginTop: 4 }}
+          sx={{ marginTop: 4 ,borderRadius: "15px", fontWeight: "1000",background:"maroon"}}
           loading={isLoginRequest}
         >
           Sign in
         </LoadingButton>
   
         <Button
+        size="large"
   fullWidth
-  sx={{ marginTop: 1, borderRadius: "10px", fontWeight: "1000" }}
+  sx={{ marginTop: 1, borderRadius: "15px", fontWeight: "1000" }}
   onClick={() => switchAuthState()}
 >
   Sign up
