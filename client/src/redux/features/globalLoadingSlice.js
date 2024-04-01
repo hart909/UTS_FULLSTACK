@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const authModalSlice = createSlice({
+export const globalLoadingSlice = createSlice({
   name: "AuthModal",
   initialState: {
-    authModalOpen: false
+    globalLoading: false
   },
   reducers: {
-    setAuthModalOpen: (state, action) => {
-      state.authModalOpen = action.payload;
+    setGlobalLoading: (state, action) => {
+      state.globalLoading = action.payload;
     }
   }
 });
 
 export const {
-  setAuthModalOpen
-} = authModalSlice.actions;
+  setGlobalLoading
+} = globalLoadingSlice.actions;
 
-export default authModalSlice.reducer;
+export default globalLoadingSlice.reducer;
