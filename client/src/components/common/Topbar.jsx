@@ -123,8 +123,8 @@ const Topbar = () => {
                     "&:hover": {
                       backgroundColor: "transparent", // Ubah warna background menjadi transparan saat hover
                     },
-                    borderRadius: 20, // Tambahkan border radius hingga 20
-                    border: 0, // Hilangkan border
+                    borderRadius: 15, // Tambahkan border radius hingga 20
+                    border: 1, // Hilangkan border
                   }}
                   onClick={() => dispatch(setAuthModalOpen(true))}
                 >
