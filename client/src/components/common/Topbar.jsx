@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import MenuIcon from "@mui/icons-material/Menu";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
-import { AppBar, Box, Button, IconButton, Stack, Toolbar, useScrollTrigger } from "@mui/material";
+import {AppBar,Box,Button,IconButton,Stack,Toolbar,useScrollTrigger,} from "@mui/material";
 import { cloneElement, useState } from "react";
 import { Link } from "react-router-dom";
 import menuConfigs from "../../configs/menu.configs";
@@ -11,6 +11,7 @@ import { setAuthModalOpen } from "../../redux/features/authModalSlice";
 import { setThemeMode } from "../../redux/features/themeModeSlice";
 import Logo from "./Logo";
 import UserMenu from "./UserMenu";
+import Sidebar from "./Sidebar";
 
 const ScrollAppBar = ({ children, window }) => {
   const { themeMode } = useSelector((state) => state.themeMode);
@@ -44,14 +45,18 @@ const Topbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const dispatch = useDispatch();
+
   const onSwithTheme = () => {
     const theme =
       themeMode === themeModes.dark ? themeModes.light : themeModes.dark;
     dispatch(setThemeMode(theme));
   };
 
+  const toggleSidebar = () => setSidebarOpen(!sidebarOpen);
+
   return (
     <>
+      <Sidebar open={sidebarOpen} toggleSidebar={toggleSidebar} />
       <ScrollAppBar>
         <AppBar elevation={0} sx={{ zIndex: 9999 }}>
           <Toolbar
@@ -61,6 +66,7 @@ const Topbar = () => {
               <IconButton
                 color="inherit"
                 sx={{ mr: 2, display: { md: "none" } }}
+                onClick={toggleSidebar}
               >
                 <MenuIcon />
               </IconButton>
@@ -70,42 +76,69 @@ const Topbar = () => {
               </Box>
             </Stack>
 
-            <Box
-              flexGrow={1}
-              alignItems="center"
-              display={{ xs: "none", md: "flex" }}
-            >
-              <Box sx={{ marginRight: "30px" }}></Box>
-              <Logo />
-            </Box>
-            {menuConfigs.main.map((item, index) => (
-              <Button
-                key={index}
-                sx={{
-                  color: appState.includes(item.state)
-                    ? "primary.contrastText"
-                    : "inherit",
-                  mr: 2,
-                  position: "relative",
-                  "&:hover": {
-                    borderBottom: "2px solid maroon",
-                  },
-                }}
-                component={Link}
-                to={item.path}
-                variant={appState.includes(item.state) ? "contained" : "text"}
-              >
-                {item.display}
-              </Button>
-            ))}
-            <IconButton sx={{ color: "inherit" }} onClick={onSwithTheme}>
-              {themeMode === themeModes.dark && <DarkModeOutlinedIcon />}
-              {themeMode === themeModes.light && <WbSunnyOutlinedIcon />}
-            </IconButton>
+            {/* main menu */}
+      <Box
+        flexGrow={1}
+        alignItems="center"
+        display={{ xs: "none", md: "flex" }}
+      >
+        <Box sx={{ marginRight: "30px" }}>
+          <Logo />
+        </Box>
+        {menuConfigs.main.map((item, index) => (
+          <Button
+            key={index}
+            sx={{
+              color: appState.includes(item.state)
+                ? "primary.contrastText"
+                : "inherit",
+              mr: 2,
+              "&:hover": {
+                color: "primary.main",
+              },
+              backgroundColor: "transparent",
+              borderBottom: "none",
+              variant: "text",
+            }}
+            component={Link}
+            to={item.path}
+          >
+            {item.display}
+          </Button>
+        ))}
+        <IconButton sx={{ color: "inherit" }} onClick={onSwithTheme}>
+          {themeMode === themeModes.dark && <DarkModeOutlinedIcon />}
+          {themeMode === themeModes.light && <WbSunnyOutlinedIcon />}
+        </IconButton>
+      </Box>
+      {/* main menu */}
+
+            {/* user menu */}
+            <Stack spacing={3} direction="row" alignItems="center">
+              {!user && (
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "maroon", // Ubah warna background menjadi maroon
+                    "&:hover": {
+                      backgroundColor: "transparent", // Ubah warna background menjadi transparan saat hover
+                    },
+                    borderRadius: 20, // Tambahkan border radius hingga 20
+                    border: 0, // Hilangkan border
+                  }}
+                  onClick={() => dispatch(setAuthModalOpen(true))}
+                >
+                  Sign In
+                </Button>
+              )}
+            </Stack>
+            {user && <UserMenu />}
+            {/* user menu */}
           </Toolbar>
         </AppBar>
       </ScrollAppBar>
     </>
   );
 };
+
 export default Topbar;
