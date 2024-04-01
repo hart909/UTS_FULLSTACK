@@ -108,7 +108,7 @@ const SignupForm = ({ switchAuthState }) => {
           fullWidth
           size="large"
           variant="contained"
-          sx={{ marginTop: 4 }}
+          sx={{ marginTop: 4,borderRadius: "15px", fontWeight: "1000",background:"maroon" }}
           loading={isLoginRequest}
         >
           sign up
@@ -116,7 +116,8 @@ const SignupForm = ({ switchAuthState }) => {
   
         <Button
           fullWidth
-          sx={{ marginTop: 1 }}
+          size="large"
+          sx={{ marginTop: 1,borderRadius: "15px", fontWeight: "1000" }}
           onClick={() => switchAuthState()}
         >
           sign in

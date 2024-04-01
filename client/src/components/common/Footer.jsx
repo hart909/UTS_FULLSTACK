@@ -22,7 +22,7 @@ const Footer = () => {
             }}
           >
             @2024 DEVELOPED FOR UTS BY{" "}
-            <span style={{ fontWeight: 1000 }}>FAG</span> Team
+            <span style={{ fontWeight: 1000 }}>FGA</span> Team
           </div>
         </Stack>
       </Paper>
