@@ -20,10 +20,12 @@ const MainLayout = () => {
     const authUser = async () => {
       const { response, err} = await userApi.getInfo();
 
-      if (response) setUser(response)
-      if (err) setUser (null)
-    }
-  })
+      if (response) dispatch(setUser(response));
+      if (err) dispatch(setUser(null));
+    };
+
+    authUser();
+  }, [dispatch]);
   return (
     <>
       {/* globalloading */}
