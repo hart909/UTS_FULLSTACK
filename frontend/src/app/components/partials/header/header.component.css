@@ -1,75 +1,152 @@
-header {
-  position: relative;
-  background: white;
-  padding: 0;
-}
-
-a {
-  color: #af1313;
-}
-
-nav:hover {
-  color: white;
-  cursor: pointer;
-}
-nav {
-    font-size: 18px;
-    
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* CSS untuk Header Navbar */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: transparent;
+    padding: 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  header.scrolled {
+    background-color: white;
+  }
+  
+  a {
+    color: white; /* Mengganti warna tulisan menjadi putih */
+  }
+  
+  a:hover {
+    position: relative;
+  }
+  
+  nav ul li a:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    animation: underline 0.3s ease-in-out forwards;
+  }
+  
+  @keyframes underline {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+  
+  nav:hover {
     color: white;
     cursor: pointer;
   }
-.container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
+  
+  nav {
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  a.logo {
+    font-weight: bold;
+    padding: 1rem;
+    margin-left: 20px;
+    font-family: "Anton", "sans-serif";
+    font-size: 20px;
+  }
+  
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    font-family: "Nunito Sans", "sans-serif";
+    font-weight: 600;
+    color: white;
+  }
+  
+  ul a {
+    padding: 1rem;
+    display: inline-block;
+  }
+  
+  a span {
+    background: #ff4d4d;
+    color: white;
+    padding: 0.1rem 0.45rem;
+    border-radius: 100rem;
+    font-size: 0.9rem;
+  }
+  
+  .menu-container {
+    position: relative;
+  }
+  
+  .menu {
+    position: absolute;
+    z-index: 1;
+    background: rgb(12, 3, 3);
+    display: none;
+  }
+  
+  .menu-container:hover .menu {
+    display: block;
+  }
+  
+  .menu a {
+    width: 100%;
+    min-width: 8rem;
+  }
 
-a.logo {
-  font-weight: bold;
-  padding: 1rem;
-  margin-left: 20px;
-  font-family: "Anton", "sans-serif";
-  font-size: 20px;
-}
-
-ul {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  font-family: "Nunito Sans", "sans-serif";
-  font-weight: 600;
-  color: white;
-}
-
-ul a {
-  padding: 1rem;
-  display: inline-block;
-}
-
-a span {
-  background: #ff4d4d;
-  color: white;
-  padding: 0.1rem 0.45rem;
-  border-radius: 100rem;
-  font-size: 0.9rem;
-}
-
-.menu-container {
-  position: relative;
-}
-
-.menu {
-  position: absolute;
-  z-index: 1;
-  background: rgb(12, 3, 3);
-  display: none;
-}
-
-.menu-container:hover .menu {
-  display: block;
-}
-
-.menu a {
-  width: 100%;
-  min-width: 8rem;
-}
+  .hero-slide {
+    position: relative;
+    height: 100vh;
+    background-image: url('../../../../assets/Hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-slide-content {
+    text-align: center;
+    color: #fff;
+  }
+  
+  .hero-slide-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-slide-content p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-slide-content .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #fdfdfd;
+    color: #000000;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    font-weight: bold;
+  }

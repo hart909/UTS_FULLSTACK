@@ -1,7 +1,12 @@
-<div class="hero-slide">
-    <div class="hero-slide-content">
-      <h1>Welcome to Our Website</h1>
-      <p>Discover amazing products and services</p>
-      <a href="#" class="cta-button">Get Started</a>
-    </div>
-  </div>
+<ul>
+    <li *ngFor="let film of films">
+        <a routerLink="/film/{{film.id}}">
+            <img [src]="film.imageUrl" [alt]="film.name">
+        <div class="content">
+            <div class="name">
+                {{film.name}}
+            </div>
+        </div>
+        </a>
+    </li>
+</ul>
