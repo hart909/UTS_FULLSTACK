@@ -11,4 +11,8 @@ export class FilmService {
   getAll():Film[]{
     return sample_film
   }
-}
+  getAllFilmsBySearchTerm(searchTerm:string){
+    return this.getAll().filter(film => film.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+  }
+

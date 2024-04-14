@@ -7,12 +7,14 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { StarRatingComponent } from './components/partials/star-rating/star-rating.component';
 import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { SearchComponent } from './components/partials/search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
