@@ -6,29 +6,14 @@
     "frontend": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
         "@schematics/angular:component": {
-          "skipTests": true
+          "standalone": false
         },
         "@schematics/angular:directive": {
-          "skipTests": true
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
+          "standalone": false
         },
         "@schematics/angular:pipe": {
-          "skipTests": true
-        },
-        "@schematics/angular:resolver": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
+          "standalone": false
         }
       },
       "root": "",
@@ -123,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": "88fdb35d-4e00-4a25-b61e-65ef59edb556"
+    "analytics": "1e38ed42-dd31-4890-be37-c004134b3208"
   }
 }
