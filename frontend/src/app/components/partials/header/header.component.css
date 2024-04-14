@@ -123,14 +123,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Outfit";
+    font-weight: bold;
   }
   
   .hero-slide-content {
     text-align: center;
     color: #fff;
+    
   }
   
   .hero-slide-content h1 {
+    font-family: "Outfit";
+    font-weight: bold;
     font-size: 3rem;
     margin-bottom: 1rem;
   }

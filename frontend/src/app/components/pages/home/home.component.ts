@@ -13,7 +13,9 @@ export class HomeComponent implements OnInit{
   constructor(private filmService:FilmService , activatedRoute:ActivatedRoute) { 
     activatedRoute.params.subscribe((params) =>{
       if(params.searchTerm)
-        this.films= this.filmService.getAllFilmsBySearchTerm(params.searchTerm);
+      this.films= this.filmService.getAllFilmsBySearchTerm(params.searchTerm);
+      else if (params.tag)
+      this.films = this.filmService.getAllFilmsByTag(params.tag);
       else
       this.films = filmService.getAll();
     })

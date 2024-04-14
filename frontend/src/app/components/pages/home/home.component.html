@@ -1,4 +1,5 @@
 <app-search></app-search>
+<app-tags></app-tags>
 <ul>
     <li *ngFor="let film of films">
         <a routerLink="/film/{{film.id}}">
@@ -12,6 +13,7 @@
             <div class="stars">
                 <star-rating [stars]="film.stars"/>
             </div>
+            
             <div class="minutes">
                 <span><mat-icon>access_time</mat-icon></span>
                 {{film.minutes}}

@@ -1,5 +1,7 @@
 //membuat data data film
+import { count } from 'console'
 import {Film} from './app/shared/models/Film'
+import { Tag } from './app/shared/models/Tag'
 
 export const sample_film: Film[]= [
     {
@@ -111,7 +113,19 @@ export const sample_film: Film[]= [
         stars: 3.5,
         imageUrl: 'assets/film10.jpg',
         tags: ['Crime', 'Comedy'],
-      },
-      
-      
+      },      
+]
+
+export const sample_tags:Tag[] =[
+  { name: 'All', count:6},
+  { name: 'Action', count: 5},
+  { name: 'Sport', count:1},
+  { name: 'Drama', count: 3},
+  { name: 'Thriller', count:2},
+  { name: 'Fantasy', count:1},
+  { name: 'Sci-Fi', count:3},
+  { name: 'Crime', count:2},
+  { name: 'History', count:1},
+  { name: 'Comedy', count:2},
+  { name: 'Romance', count:1},
 ]
