@@ -23,5 +23,9 @@ export class FilmService {
   this.getAll():
   this.getAll().filter(film => film.tags?.includes(tag));
   }
+  getFilmById(filmId:string):Film{
+    return this.getAll().find(film => film.id ==filmId) ?? new Film();
+
+  }
   }
 

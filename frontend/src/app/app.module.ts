@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { SearchComponent } from './components/partials/search/search.component';
 import { TagsComponent } from './components/partials/tags/tags.component';
+import { FilmPageComponent } from './components/pages/film-page/film-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { TagsComponent } from './components/partials/tags/tags.component';
     HomeComponent,
     StarRatingComponent,
     SearchComponent,
-    TagsComponent
+    TagsComponent,
+    FilmPageComponent
   ],
   imports: [
     BrowserModule,

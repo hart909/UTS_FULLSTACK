@@ -2,11 +2,14 @@
 import { count } from 'console'
 import {Film} from './app/shared/models/Film'
 import { Tag } from './app/shared/models/Tag'
+import { link } from 'fs'
+
 
 export const sample_film: Film[]= [
     {
         id:'1',
         name: 'Rocky Balboa 4K Blu-ray',
+        overview: 'Former heavyweight champion Rocky Balboa steps out of retirement and back into the ring, putting himself against a new rival in a dramatically different era. After a virtual boxing match declares Rocky Balboa the victor over current champion Mason The Line Dixon, the legendary fighters passion and spirit are reignited But when his desire to fight in small, regional competitions is trumped by promoters calling for a rematch of the cyber-fight, Balboa must weigh the mental and physical risks of a high profile exhibition match against his need to be in the ring',
         minutes: '102 min',
         price: 420000,
         favorite: false,
@@ -18,6 +21,7 @@ export const sample_film: Film[]= [
       {
         id:'2',
         name: 'Vikings: The Complete Series Blu-ray',
+        overview: 'The adventures of a Ragnar Lothbrok: the greatest hero of his age. The series tells the saga of Ragnars band of Viking brothers and his family as he rises to become King of the Viking tribes. As well as being a fearless warrior, Ragnar embodies the Norse traditions of devotion to the gods: legend has it that he was a direct descendant of Odin, the god of war and warriors.',
         minutes: '3786 min',
         price: 1200000,
         favorite: true,
@@ -29,6 +33,7 @@ export const sample_film: Film[]= [
       {
         id:'3',
         name: 'La Femme Nikita 4K Blu-ray',
+        overview: 'Rescued from death row by a top-secret agency, Nikita is slowly transformed from a cop-killing junkie into a cold-blooded bombshell with a license to kill. But when she begins the deadliest mission of her career only to fall for a man who knows nothing of her true identity, Nikita discovers that in the dark and ruthless world of espionage, the greatest casualty of all...is true love.',
         minutes: '117 min',
         price: 430000,
         favorite: false,
@@ -40,6 +45,7 @@ export const sample_film: Film[]= [
       {
         id:'4',
         name: 'Ghostbusters: Frozen Empire 4K Blu-ray',
+        overview: 'In Ghostbusters: Frozen Empire, the Spengler family decide to leave Summerville, Oklahoma and go back to where it all started – the iconic New York City firehouse – and help the original Ghostbusters, who have developed a top-secret research lab to take busting ghosts to the next level! But when the discovery of an ancient artifact unleashes a mysterious and evil force, known as the Death Chill, Ghostbusters new and old must join forces to protect their home and save the world from a deadly and unpredictable fate that unknowingly, could affect earth’s history with a second Ice Age.',
         minutes: '115 min',
         price: 350000,
         favorite: true,
@@ -51,17 +57,19 @@ export const sample_film: Film[]= [
       {
         id:'5',
         name: 'Dune: Part Two (4K Ultra HD + Digital) [4K UHD]',
+        overview: 'Duke Paul Atreides joins the Fremen and begins a spiritual and martial journey to become Muad dib, while trying to prevent the horrible but inevitable future he is witnessed: a Holy War in his name, spreading throughout the known universe.',
         minutes: '166 min',
         price: 410000,
         favorite: false,
         studio: 'Warner Bros',
-        stars: 3.0,
+        stars: 4.0,
         imageUrl: 'assets/film5.jpg',
         tags: ['Sci-Fi', 'Action'],
       },
       {
         id:'6',
         name: 'Mr. Robot: The Complete Series Blu-ray',
+        overview: 'Follows a young computer programmer who suffers from social anxiety disorder and forms connections through hacking. He is recruited by a mysterious anarchist, who calls himself Mr. Robot.',
         minutes: '2227 min',
         price: 920000,
         favorite: false,
@@ -73,6 +81,7 @@ export const sample_film: Film[]= [
       {
         id:'7',
         name: 'American Sniper 4K Blu-ray',
+        overview: 'A Navy SEAL recounts his military career, which includes more than 150 confirmed kills.',
         minutes: '133 min',
         price: 300000,
         favorite: false,
@@ -84,6 +93,7 @@ export const sample_film: Film[]= [
       {
         id:'8',
         name: 'Friends: The Complete Series Blu-ray',
+        overview: '"Friends" is an American sitcom about six friends struggling to survive on their own in Manhattan. In each episode, they find the companionship, comfort and support from each other to be the perfect solutions to the pressures of everyday life.',
         minutes: '4800 min',
         price: 530000,
         favorite: true,
@@ -95,6 +105,7 @@ export const sample_film: Film[]= [
       {
         id:'9',
         name: 'The Flash: The Complete Series Blu-ray',
+        overview: 'After witnessing his mothers strange murder and his father is wrongful conviction for the crime, Barry Allen becomes a brilliant but socially awkward crime scene investigator for the Central City Police Department. An advanced particle accelerator malfunctions during its public unveiling, bathing the city center with a previously unknown form of radiation. Awakening after a nine-month coma, Allen discovers he has the ability to move at superhuman speeds and vows to use his gifts to protect Central City from the escalating violence of “metahuman” criminals.',
         minutes: '11040 min',
         price: 730000,
         favorite: true,
@@ -106,6 +117,7 @@ export const sample_film: Film[]= [
       {
         id:'10',
         name: 'Oceans Trilogy 4K Blu-ray',
+        overview: 'Ocean is Eleven kicks off the fun with a daring Las Vegas heist. The team goes global to European glamour spots in Twelve. And Thirteen has the group reuniting in Vegas for a dazzling scheme of payback against a double-crossing casino kingpin.',
         minutes: '363 min',
         price: 370000,
         favorite: false,
@@ -117,7 +129,7 @@ export const sample_film: Film[]= [
 ]
 
 export const sample_tags:Tag[] =[
-  { name: 'All', count:6},
+  { name: 'All', count:10},
   { name: 'Action', count: 5},
   { name: 'Sport', count:1},
   { name: 'Drama', count: 3},

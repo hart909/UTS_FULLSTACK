@@ -2,6 +2,7 @@
 export class Film{
     id!:string;
     name!:string;
+    overview!:string;
     price!:number;
     tags?: string[];
     favorite!:boolean;
