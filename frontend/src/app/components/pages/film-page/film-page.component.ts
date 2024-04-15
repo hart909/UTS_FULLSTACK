@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Film } from '../../../shared/models/Film';
 import { ActivatedRoute } from '@angular/router';
 import { FilmService } from '../../../services/film.service';
+import { CartService } from '../../../services/cart.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-film-page',
@@ -10,11 +12,16 @@ import { FilmService } from '../../../services/film.service';
 })
 export class FilmPageComponent {
 film!: Film;
-constructor(activatedRoute:ActivatedRoute, filmService:FilmService){
+constructor(activatedRoute:ActivatedRoute, filmService:FilmService,
+  private cartService:CartService, private router: Router){
   activatedRoute.params.subscribe((params) =>{
     if(params.id)
       this.film = filmService.getFilmById(params.id);
   })
+}
+addToCart(){
+  this.cartService.addToCart(this.film);
+  this.router.navigateByUrl('/cart-page')
 }
 
 }
