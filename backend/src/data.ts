@@ -1,8 +1,4 @@
-import {Film} from './app/shared/models/Film'
-import { Tag } from './app/shared/models/Tag'
-
-
-export const sample_film: Film[]= [
+export const sample_film: any[]= [
     {
         id:'1',
         name: 'Rocky Balboa 4K Blu-ray',
@@ -125,7 +121,7 @@ export const sample_film: Film[]= [
       },      
 ]
 
-export const sample_tags:Tag[] =[
+export const sample_tags:any[] =[
   { name: 'All', count:10},
   { name: 'Action', count: 5},
   { name: 'Sport', count:1},

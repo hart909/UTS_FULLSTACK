@@ -10,6 +10,8 @@ import { Tag } from '../../../shared/models/Tag';
 export class TagsComponent {
   tags?:Tag[];
   constructor(filmService:FilmService) {
-    this.tags = filmService.getAllTags();
+    filmService.getAllTags().subscribe(serverTags =>{
+      this.tags = serverTags;
+    });
   }
 }
