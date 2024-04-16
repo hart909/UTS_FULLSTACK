@@ -1,14 +1,21 @@
 .container{
     display: flex;
+    position: relative;
+    top: -50px;
     justify-content: center;
     align-items: center;
     height: 100%;
-    margin-top: 50px;
     color: white;
     }
     
     .details{
       width: 28rem;
+    }
+    input{
+      background-color: black;
+      border:none;
+      outline: none;
+      color: white;
     }
     
     form{
