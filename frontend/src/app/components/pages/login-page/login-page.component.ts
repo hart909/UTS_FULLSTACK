@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.css'
 })
-export class LoginPageComponent {
+export class LoginPageComponent implements OnInit {
   loginForm!:FormGroup;
   isSubmitted = false;
   returnUrl = '';
@@ -32,10 +32,12 @@ export class LoginPageComponent {
     this.isSubmitted = true;
     if(this.loginForm.invalid) return;
 
-    alert(`email: ${this.fc.email.value}
+    alert(`email: ${this.fc.email.value},
     password: ${this.fc.password.value}`)
 
     this.userService.login({email:this.fc.email.value,
-      password: this.fc.password.value});
+      password: this.fc.password.value}).subscribe(() =>{
+        this.router.navigateByUrl(this.returnUrl);
+      });
   }
 }

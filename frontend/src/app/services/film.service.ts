@@ -4,7 +4,7 @@ import { sample_film, sample_tags } from '../../data';
 import { Tag } from '../shared/models/Tag';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { FILMS_BY_ID_URL, FILMS_BY_SEARCH_URL, FILMS_BY_TAG_URL, FILMS_TAGS_URL, FILMS_URL } from '../shared/models/constants/urls';
+import { FILMS_BY_ID_URL, FILMS_BY_SEARCH_URL, FILMS_BY_TAG_URL, FILMS_TAGS_URL, FILMS_URL } from '../shared/constants/urls';
 @Injectable({
   providedIn: 'root'
 })
