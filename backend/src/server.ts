@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
 dotenv.config();
-
 import express, { Router } from "express";
 import cors from "cors"
 import filmRouter from './routers/film.router'

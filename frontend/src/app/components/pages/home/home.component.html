@@ -4,11 +4,23 @@
       <div class="hero-slide-content">
         <h1>Welcome to Our Website</h1>
         <p>Discover amazing bluray Here</p>
-        <a href="#" class="cta-button">Get Started</a>
-      </div>
+        <a href="#" class="cta-button" id="getStartedButton">Get Started</a>
+        <script>
+            const getStartedButton = document.getElementById('getStartedButton');
+          
+            getStartedButton.addEventListener('click', function(e) {
+              e.preventDefault();
+              const scrollHeight = window.innerHeight; // Menggunakan tinggi jendela browser sebagai nilai scrollHeight
+              window.scrollTo({
+                top: scrollHeight,
+                behavior: 'smooth'
+              });
+            });
+          </script>  
+    </div>
     </div>
   </div>
-<app-search></app-search>
+<app-search #appSearch></app-search>
 <app-tags></app-tags>
 <app-not-found [visible]="!films || !films.length"
 resetLinkText="Reset Search">
