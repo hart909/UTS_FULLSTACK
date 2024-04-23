@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { IUserLogin } from '../shared/interfaces/IUserLogin';
-import { USER_LOGIN_URL } from '../shared/constants/urls';
+import { USER_LOGIN_URL, USER_REGISTER_URL } from '../shared/constants/urls';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { IUserRegister } from '../shared/interfaces/iUserRegister';
 
 const USER_KEY = 'User';
 @Injectable({
@@ -32,6 +33,26 @@ export class UserService {
         }
       })
     );
+  }
+
+  register(userRegister:IUserRegister): Observable<User>{
+    return this.http.post<User>(USER_REGISTER_URL, userRegister).pipe(
+      tap({
+        next: (user) =>{
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Welcome To FGA ${user.name}`,
+            'Register Succesful'
+          )
+        },
+        error: (errorResponse) =>{
+          this.toastrService.error(errorResponse.error,
+            'Register Failed'
+          )
+        }
+      })
+    )
   }
 
   logout(){
