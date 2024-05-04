@@ -47,6 +47,10 @@ export class CartService {
     return this.cartSubject.asObservable();
   }
 
+  getCard(): Cart{
+    return this.cartSubject.value;
+  }
+
   getCart(): Cart{
     return this.cartSubject.value;
   }
