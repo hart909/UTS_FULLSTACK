@@ -43,7 +43,9 @@ import { LoadingInterceptor } from './shared/interceptors/loading.interceptor';
     TextInputComponent,
     DefaultButtonComponent,
     RegisterPageComponent,
-    LoadingComponent
+    LoadingComponent,
+=======
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
